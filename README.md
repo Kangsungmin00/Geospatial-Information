@@ -64,7 +64,7 @@ SELECT a.gid, b.gid
 FROM farm_clean a, farm_clean b
 WHERE a.gid < b.gid
   AND ST_Overlaps(a.geom, b.geom)
-  AND ST_Area(ST_Intersection(a.geom, b.geom)) > 0.01;
+  AND ST_Area(ST_Intersection(a.geom, b.geom)) > 0.0;
 ```
 
 ```python
