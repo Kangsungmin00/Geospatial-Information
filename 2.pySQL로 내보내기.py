@@ -87,7 +87,7 @@ class FullGeometryQualityProcessor(QgsProcessingAlgorithm):
             inter = processing.run("native:intersection", {
                 'INPUT': with_id, 'OVERLAY': with_id, 'OUTPUT': 'memory:intersection'
             }, context=context)['OUTPUT']
-            expr = '"INPUT_ID" < "INPUT_ID_2" AND area($geometry) > 0.0001'
+            expr = '"INPUT_ID" < "INPUT_ID_2" AND area($geometry) > 0.00'
             overlap = processing.run("native:extractbyexpression", {
                 'INPUT': inter, 'EXPRESSION': expr, 'OUTPUT': 'memory:overlap'
             }, context=context)['OUTPUT']
