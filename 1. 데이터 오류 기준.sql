@@ -59,7 +59,7 @@ JOIN land_clean b
   ON a.gid < b.gid  -- 자기 자신 비교 제거 + 중복 제거
   AND a.geom && b.geom  -- bbox 조건 (인덱스 활용)
 WHERE ST_Intersects(a.geom, b.geom)
-  AND ST_Area(ST_Intersection(a.geom, b.geom)) > 0.0001;
+  AND ST_Area(ST_Intersection(a.geom, b.geom)) > 0.00;
 
 DROP TABLE IF EXISTS land_error_all;
 
